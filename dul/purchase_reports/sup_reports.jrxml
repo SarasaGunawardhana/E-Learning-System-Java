@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sup_reports" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a5145510-36f9-4326-a02b-1afd28d2856d">
+	<property name="ireport.zoom" value="1.2100000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="s_id" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     pur_supplier_data.`id` AS pur_supplier_data_id,
+     pur_supplier_data.`supplier_name` AS pur_supplier_data_supplier_name,
+     pur_supplier_data.`contact_person` AS pur_supplier_data_contact_person,
+     pur_supplier_data.`address_1` AS pur_supplier_data_address_1,
+     pur_supplier_data.`address_2` AS pur_supplier_data_address_2,
+     pur_supplier_data.`address_3` AS pur_supplier_data_address_3,
+     pur_supplier_data.`city` AS pur_supplier_data_city,
+     pur_supplier_data.`phone_no` AS pur_supplier_data_phone_no,
+     pur_supplier_data.`fax_no` AS pur_supplier_data_fax_no,
+     pur_supplier_data.`web` AS pur_supplier_data_web,
+     pur_supplier_data.`email` AS pur_supplier_data_email,
+     pur_supplier_data.`comment` AS pur_supplier_data_comment,
+     pur_supplier_data.`logo` AS pur_supplier_data_logo
+FROM
+     `pur_supplier_data` pur_supplier_data
+where
+	pur_supplier_data.`id`=$P{s_id}]]>
+	</queryString>
+	<field name="pur_supplier_data_id" class="java.lang.Integer"/>
+	<field name="pur_supplier_data_supplier_name" class="java.lang.String"/>
+	<field name="pur_supplier_data_contact_person" class="java.lang.String"/>
+	<field name="pur_supplier_data_address_1" class="java.lang.String"/>
+	<field name="pur_supplier_data_address_2" class="java.lang.String"/>
+	<field name="pur_supplier_data_address_3" class="java.lang.String"/>
+	<field name="pur_supplier_data_city" class="java.lang.String"/>
+	<field name="pur_supplier_data_phone_no" class="java.lang.String"/>
+	<field name="pur_supplier_data_fax_no" class="java.lang.String"/>
+	<field name="pur_supplier_data_web" class="java.lang.String"/>
+	<field name="pur_supplier_data_email" class="java.lang.String"/>
+	<field name="pur_supplier_data_comment" class="java.lang.String"/>
+	<field name="pur_supplier_data_logo" class="java.lang.Object"/>
+	<variable name="pur_supplier_data_id_1" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{pur_supplier_data_id}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="75">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="62" backcolor="#003333" uuid="33799b69-d2ed-43d9-9025-1d2edfcfb388"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="14" y="11" width="527" height="41" backcolor="#003333" uuid="79a8add4-9734-4261-90df-0ab91a12354b"/>
+				<graphicElement>
+					<pen lineWidth="3.0" lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="153" y="11" width="262" height="41" forecolor="#FFFFFF" uuid="f368d6dc-4e42-4067-8a24-b994d91376d9"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="24"/>
+				</textElement>
+				<text><![CDATA[SUPPLIER INFORMATION]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="612" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="16" width="555" height="534" backcolor="#003333" uuid="5957274a-fd17-4fb0-b402-907aa196b787"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="121" y="34" width="100" height="20" forecolor="#FFFFFF" uuid="7bf3ea74-a00a-4fbb-89fe-8704679d117a"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Supplier ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="274" y="34" width="183" height="20" forecolor="#FFFFFF" uuid="b8049c64-77d2-43b2-a683-b94d095c7cc2"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="121" y="70" width="100" height="20" forecolor="#FFFFFF" uuid="4cedf19b-3096-4dbb-bddc-8c019c6f7ef2"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Supplier Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="274" y="70" width="183" height="20" forecolor="#FFFFFF" uuid="06593f40-1035-47ba-8a19-373dea4a0afc"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_supplier_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="121" y="107" width="100" height="20" forecolor="#FFFFFF" uuid="c223c173-ee86-4134-bc21-870ec07947a6"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Contact Person]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="274" y="107" width="183" height="20" forecolor="#FFFFFF" uuid="379f62a2-c957-403a-8b88-37fb79e20fc4"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_contact_person}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="121" y="143" width="100" height="20" forecolor="#FFFFFF" uuid="b1dfee11-dc05-4fdd-9126-57bc78128617"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Address 1]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="274" y="143" width="183" height="20" forecolor="#FFFFFF" uuid="0569d188-53c5-4db3-ae44-be1696516b47"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_address_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="121" y="180" width="100" height="20" forecolor="#FFFFFF" uuid="d2cdce4a-3bf9-4b27-b358-d2277dea374e"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Address 2]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="274" y="180" width="183" height="20" forecolor="#FFFFFF" uuid="e220943d-60d0-45fd-9aa2-a4e918b42d51"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_address_2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="121" y="212" width="100" height="20" forecolor="#FFFFFF" uuid="8511c5d6-02e5-4c33-aaed-bc0f262b6456"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Address 3]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="274" y="214" width="183" height="20" forecolor="#FFFFFF" uuid="0840f408-fc71-4467-b8a8-ce4f566d289a"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_address_3}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="121" y="247" width="100" height="20" forecolor="#FFFFFF" uuid="d0f70782-debe-4d63-8e31-ad5b31fc832b"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[City]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="274" y="248" width="183" height="20" forecolor="#FFFFFF" uuid="ab3c8c8f-051c-41dc-ae6c-0c9afc50055f"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_city}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="121" y="280" width="100" height="20" forecolor="#FFFFFF" uuid="2d00cb75-05fc-4e69-aad2-6fc1cbe1170c"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Phone Number]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="274" y="280" width="183" height="20" forecolor="#FFFFFF" uuid="98772d99-461f-4d53-9d72-ffd28b01fb40"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_phone_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="121" y="315" width="100" height="20" forecolor="#FFFFFF" uuid="5a4dbda0-797a-4044-83a2-81bdbb1f8b5d"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Fax Number]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="274" y="315" width="183" height="20" forecolor="#FFFFFF" uuid="fc7de494-dd46-4279-a22d-f959b73dc323"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_fax_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="121" y="349" width="100" height="20" forecolor="#FFFFFF" uuid="b8f40903-abcf-480e-8d38-294149bcd14c"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Web Address]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="274" y="349" width="183" height="20" forecolor="#FFFFFF" uuid="169621ad-2ec7-4bf3-ab76-24a8a4236b52"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_web}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="121" y="384" width="100" height="20" forecolor="#FFFFFF" uuid="249a4c4f-74c9-45d7-8763-c4c9af221314"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Email Address]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="274" y="383" width="183" height="20" forecolor="#FFFFFF" uuid="7306f81a-b9a5-4e88-9c9a-c71022ce6346"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="121" y="419" width="100" height="20" forecolor="#FFFFFF" uuid="7e032718-28f1-4541-b0ae-d4f6ed892a39"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Comment]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="274" y="419" width="183" height="20" forecolor="#FFFFFF" uuid="80b49603-591a-4c88-baaf-b436bdfdb747"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_comment}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

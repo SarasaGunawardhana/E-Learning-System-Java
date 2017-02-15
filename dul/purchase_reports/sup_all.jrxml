@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sup_all" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="aa425d67-d1fa-4a1d-81fa-b5c287fd1e28">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     pur_supplier_data.`id` AS pur_supplier_data_id,
+     pur_supplier_data.`supplier_name` AS pur_supplier_data_supplier_name,
+     pur_supplier_data.`contact_person` AS pur_supplier_data_contact_person,
+     pur_supplier_data.`address_1` AS pur_supplier_data_address_1,
+     pur_supplier_data.`address_2` AS pur_supplier_data_address_2,
+     pur_supplier_data.`address_3` AS pur_supplier_data_address_3,
+     pur_supplier_data.`city` AS pur_supplier_data_city,
+     pur_supplier_data.`phone_no` AS pur_supplier_data_phone_no,
+     pur_supplier_data.`fax_no` AS pur_supplier_data_fax_no,
+     pur_supplier_data.`web` AS pur_supplier_data_web,
+     pur_supplier_data.`email` AS pur_supplier_data_email,
+     pur_supplier_data.`comment` AS pur_supplier_data_comment,
+     pur_supplier_data.`logo` AS pur_supplier_data_logo
+FROM
+     `pur_supplier_data` pur_supplier_data]]>
+	</queryString>
+	<field name="pur_supplier_data_id" class="java.lang.Integer"/>
+	<field name="pur_supplier_data_supplier_name" class="java.lang.String"/>
+	<field name="pur_supplier_data_contact_person" class="java.lang.String"/>
+	<field name="pur_supplier_data_address_1" class="java.lang.String"/>
+	<field name="pur_supplier_data_address_2" class="java.lang.String"/>
+	<field name="pur_supplier_data_address_3" class="java.lang.String"/>
+	<field name="pur_supplier_data_city" class="java.lang.String"/>
+	<field name="pur_supplier_data_phone_no" class="java.lang.String"/>
+	<field name="pur_supplier_data_fax_no" class="java.lang.String"/>
+	<field name="pur_supplier_data_web" class="java.lang.String"/>
+	<field name="pur_supplier_data_email" class="java.lang.String"/>
+	<field name="pur_supplier_data_comment" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="72" backcolor="#003333" uuid="3d86c1cd-a628-41cf-b842-35712c5a3595"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="11" y="12" width="781" height="45" backcolor="#003333" uuid="70f12681-356a-4a6e-b36b-150950058c17"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="255" y="23" width="325" height="38" forecolor="#FFFFFF" uuid="27be68d1-9fab-4709-9783-6b53daf3c39e"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[SUPPLIER  INFORMATION]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="41" backcolor="#003333" uuid="d94f291a-5fc1-470e-8b08-0642eec8b6af"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="39" y="10" width="74" height="20" forecolor="#FFFFFF" uuid="df23d269-cb42-4fcd-bfa6-e0e30bcf543d"/>
+				<text><![CDATA[Supplier ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="10" width="89" height="20" forecolor="#FFFFFF" uuid="c4dd2601-8510-4935-bd2b-80b153092fd5"/>
+				<text><![CDATA[Supplier Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="235" y="10" width="114" height="20" forecolor="#FFFFFF" uuid="df5bd067-0662-4aa9-bd92-14ea54710460"/>
+				<text><![CDATA[Contact Person]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="369" y="10" width="112" height="20" forecolor="#FFFFFF" uuid="34ebbd01-020c-4e06-8d78-96d7e8960e4b"/>
+				<text><![CDATA[Phone Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="509" y="10" width="100" height="20" forecolor="#FFFFFF" uuid="f38ded1a-237b-4137-b37f-20eaefd0cd46"/>
+				<text><![CDATA[Fax Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="642" y="10" width="115" height="20" forecolor="#FFFFFF" uuid="2ac443a8-1c65-4208-a048-c35f73a6cae5"/>
+				<text><![CDATA[Email ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="23" backcolor="#003333" uuid="902fe2b3-503b-40dd-8e9c-a327345e4236"/>
+			</rectangle>
+			<textField>
+				<reportElement x="39" y="0" width="74" height="20" forecolor="#FFFFFF" uuid="bb2fd14c-79fa-465d-82b0-2d5f42a61683"/>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="0" width="89" height="20" forecolor="#FFFFFF" uuid="03164615-54ec-4571-9f04-20c0ee2acbb0"/>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_supplier_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="235" y="0" width="114" height="20" forecolor="#FFFFFF" uuid="28c5578a-de54-4cef-8b3d-b9827603d088"/>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_contact_person}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="0" width="112" height="20" forecolor="#FFFFFF" uuid="85998002-561f-421b-a375-2bd4be6a0b2a"/>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_phone_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="ef7aeaf8-b352-4ceb-8fd8-fe2d6285d1c4"/>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_fax_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="642" y="0" width="150" height="20" forecolor="#FFFFFF" uuid="96ec1c3f-c49c-4dfd-98d3-324f84d5c501"/>
+				<textFieldExpression><![CDATA[$F{pur_supplier_data_email}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

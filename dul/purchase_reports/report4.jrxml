@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report4" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="729fce68-0703-4a56-867f-6dcc8bea5926">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="34"/>
+	<parameter name="wid" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     pur_add_warranty.`product_id` AS pur_add_warranty_product_id,
+     pur_add_warranty.`product_name` AS pur_add_warranty_product_name,
+     pur_add_warranty.`w_start_date` AS pur_add_warranty_w_start_date,
+     pur_add_warranty.`w_duration` AS pur_add_warranty_w_duration,
+     pur_add_warranty.`w_end_date` AS pur_add_warranty_w_end_date,
+     pur_add_warranty.`remaining_duration` AS pur_add_warranty_remaining_duration,
+     pur_add_warranty.`w_type` AS pur_add_warranty_w_type,
+     pur_add_warranty.`w_description` AS pur_add_warranty_w_description
+FROM
+     `pur_add_warranty` pur_add_warranty
+WHERE
+	 pur_add_warranty.`product_id`=$P{wid}]]>
+	</queryString>
+	<field name="pur_add_warranty_product_id" class="java.lang.Integer"/>
+	<field name="pur_add_warranty_product_name" class="java.lang.String"/>
+	<field name="pur_add_warranty_w_start_date" class="java.lang.String"/>
+	<field name="pur_add_warranty_w_duration" class="java.lang.String"/>
+	<field name="pur_add_warranty_w_end_date" class="java.lang.String"/>
+	<field name="pur_add_warranty_remaining_duration" class="java.lang.String"/>
+	<field name="pur_add_warranty_w_type" class="java.lang.String"/>
+	<field name="pur_add_warranty_w_description" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="79" backcolor="#003333" uuid="0cb38c7d-e2b4-44c0-ac13-ddb1a665be4e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="11" y="11" width="534" height="58" backcolor="#003333" uuid="da3f8a57-1eb9-4ea8-abdf-6b71212f5226"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="160" y="21" width="233" height="48" forecolor="#FFFFFF" uuid="4fd04591-3b4a-4e1e-9c9e-4b6dae8a1d36"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[WARRANTY DETAILS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="355" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="10" width="555" height="345" forecolor="#000000" backcolor="#003333" uuid="7fa15db7-ad4e-404a-9905-d70294d49923"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="135" y="31" width="100" height="20" forecolor="#FFFFFF" uuid="be419be5-687e-4613-995b-114c58d82b0b"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Warranty ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="266" y="31" width="175" height="20" forecolor="#FFFFFF" uuid="df65b4ad-6843-4a7a-8aa7-c817966349e6"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_add_warranty_product_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="135" y="64" width="100" height="20" forecolor="#FFFFFF" uuid="125c5cfe-8aff-4235-9429-042a2e2a24de"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Product Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="266" y="64" width="188" height="20" forecolor="#FFFFFF" uuid="1779bc64-944b-4c54-b28c-14bd6826b648"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_add_warranty_product_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="135" y="100" width="100" height="20" forecolor="#FFFFFF" uuid="24dfb7af-8a74-4cd2-a3b5-98325de0812d"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Start Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="266" y="100" width="175" height="20" forecolor="#FFFFFF" uuid="cadb0153-18d7-4803-9882-78f789125f2c"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_add_warranty_w_start_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="135" y="141" width="100" height="20" forecolor="#FFFFFF" uuid="f2067cc9-5d3e-47ca-b21a-57c23fce6f71"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Duration]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="266" y="141" width="175" height="20" forecolor="#FFFFFF" uuid="c62dded6-19e2-429e-9099-374019cf122b"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_add_warranty_w_duration}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="135" y="184" width="100" height="20" forecolor="#FFFFFF" uuid="9f46e5ca-a1df-4490-bc35-6248adea219b"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[End Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="266" y="184" width="175" height="20" forecolor="#FFFFFF" uuid="54ef887c-b151-4b7c-abce-d14961638305"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_add_warranty_w_end_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="135" y="227" width="100" height="20" forecolor="#FFFFFF" uuid="dd29f5b3-a70d-41e9-8927-e84ca09ee74b"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Remaining Duration]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="266" y="227" width="211" height="20" forecolor="#FFFFFF" uuid="fb3555d9-7b5b-42e5-9d0c-6da90abbb99b"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_add_warranty_remaining_duration}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="135" y="267" width="100" height="20" forecolor="#FFFFFF" uuid="42faf733-f6db-4f18-8533-ed231c8372ad"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Warranty Type]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="266" y="267" width="175" height="20" forecolor="#FFFFFF" uuid="a9e42204-94f0-4d55-8feb-05e7a36b152b"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_add_warranty_w_type}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="135" y="304" width="100" height="20" forecolor="#FFFFFF" uuid="5cd4af4c-48b6-498c-bcff-ec9a5583101e"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="266" y="304" width="175" height="20" forecolor="#FFFFFF" uuid="9bd2ae17-3e7b-44c3-b965-1c232449d2a5"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pur_add_warranty_w_description}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

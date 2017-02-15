@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="para" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4546cfa6-0edd-4728-84d0-d536141769f0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="email" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from member m,card_info c where c.id=m.id and m.email=$P{email}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dob" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telephone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mem_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ctype" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="card_no" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pin" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="exp_date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="555" height="79" uuid="6d2f2243-c22f-4499-bb0e-dd4c76d904f2"/>
+				<imageExpression><![CDATA["C:\\Users\\Toshiba\\Desktop\\user-1.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="4" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="5" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="416" splitType="Stretch">
+			<image>
+				<reportElement x="7" y="0" width="545" height="405" uuid="847cc391-965c-40ae-9185-681196abf40a"/>
+				<imageExpression><![CDATA["C:\\Users\\Toshiba\\Desktop\\Background.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="301" y="99" width="86" height="20" forecolor="#000000" uuid="52753a4a-ee89-4518-ae57-2c8e03943881"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="135" width="82" height="20" forecolor="#000000" uuid="870c0e28-380b-42a7-bc22-3d7454d83fd1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="175" width="64" height="20" forecolor="#000000" uuid="35524f61-0051-47fa-8468-14bc5bed746f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="214" width="143" height="20" forecolor="#000000" uuid="54603c10-da87-4c8c-95e6-9e4942bb3761"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="244" width="79" height="20" forecolor="#000000" uuid="af7b6260-e0f0-47f7-8122-a5185c3fc0d4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ctype}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="281" width="90" height="20" forecolor="#000000" uuid="2df929bd-f4f1-4274-b584-4b56e4bfdfc2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{card_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="131" y="99" width="86" height="20" forecolor="#000000" uuid="27d590b0-34d1-4831-be76-9a8b91d6cc9d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[FIRST NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="135" width="82" height="20" forecolor="#000000" uuid="cad1d817-73fd-44f2-ad35-5ea443ba2e2d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[LAST NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="175" width="64" height="20" forecolor="#000000" uuid="875a430a-eb47-43ec-bc22-74288bf44b9f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[DOB]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="214" width="85" height="20" forecolor="#000000" uuid="7b5e5e73-fc5c-4979-bdcc-4d093fb38319"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[E-MAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="244" width="79" height="20" forecolor="#000000" uuid="f74a86d3-b32e-4f79-9c0f-930f977710c0"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[CARD TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="131" y="281" width="90" height="20" forecolor="#000000" uuid="2e9cf766-8abf-4038-8ab2-44cf7299b2ea"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[CARD NUMBER]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="163" y="29" width="95" height="30" uuid="514531fb-f1e7-4945-b289-780fdd0ce6ef"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="29" width="124" height="30" uuid="22b40cd4-30d5-47aa-b402-17ded522e829"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="73" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="42" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="48" splitType="Stretch"/>
+	</summary>
+</jasperReport>

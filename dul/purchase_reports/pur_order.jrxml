@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pur_order" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="aaa7640e-7a61-49b6-bb71-a708828099d8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+     pur_purchase.`product_id` AS pur_purchase_product_id,
+     pur_purchase.`product_name` AS pur_purchase_product_name,
+     pur_purchase.`model_number` AS pur_purchase_model_number,
+     pur_purchase.`model_year` AS pur_purchase_model_year,
+     pur_purchase.`unit_price` AS pur_purchase_unit_price,
+     pur_purchase.`quantity` AS pur_purchase_quantity,
+     pur_purchase.`total` AS pur_purchase_total,
+     pur_purchase.`supplier_name` AS pur_purchase_supplier_name,
+     pur_purchase.`invoice_number` AS pur_purchase_invoice_number,
+     pur_purchase.`purchased_date` AS pur_purchase_purchased_date
+FROM
+     `pur_purchase` pur_purchase
+where
+	 pur_purchase.`product_id` = $P{id}	]]>
+	</queryString>
+	<field name="pur_purchase_product_id" class="java.lang.Integer"/>
+	<field name="pur_purchase_product_name" class="java.lang.String"/>
+	<field name="pur_purchase_model_number" class="java.lang.String"/>
+	<field name="pur_purchase_model_year" class="java.lang.String"/>
+	<field name="pur_purchase_unit_price" class="java.lang.Double"/>
+	<field name="pur_purchase_quantity" class="java.lang.Integer"/>
+	<field name="pur_purchase_total" class="java.lang.Double"/>
+	<field name="pur_purchase_supplier_name" class="java.lang.String"/>
+	<field name="pur_purchase_invoice_number" class="java.lang.String"/>
+	<field name="pur_purchase_purchased_date" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="14" width="531" height="39" uuid="288a1d38-3fc5-41f3-bb50-c4a46cb6372f"/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="d8f1eb63-efd9-4eda-980a-7eb09f063bcd"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="112" y="0" width="100" height="20" uuid="9b71439a-5b2b-446c-b513-c2f4d3598276"/>
+				<text><![CDATA[pur_purchase_product_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="226" y="0" width="100" height="20" uuid="9b6313e0-39e0-4c01-8fe0-9283af75a723"/>
+				<text><![CDATA[pur_purchase_model_number]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="63c2d5a7-5c00-458c-bd12-22aef4c8fecd"/>
+				<textFieldExpression><![CDATA[$F{pur_purchase_product_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="112" y="3" width="100" height="20" uuid="d431d253-2e32-4e19-b7f0-77db9194df88"/>
+				<textFieldExpression><![CDATA[$F{pur_purchase_product_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="226" y="3" width="100" height="20" uuid="07221fc4-8be1-4ed6-bb23-5806e5958e93"/>
+				<textFieldExpression><![CDATA[$F{pur_purchase_model_number}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

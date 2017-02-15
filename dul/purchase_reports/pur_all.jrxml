@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pur_all" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fb02cd8a-a489-4db9-baa4-631d1f1bcae6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     pur_purchase.`product_id` AS pur_purchase_product_id,
+     pur_purchase.`product_name` AS pur_purchase_product_name,
+     pur_purchase.`model_number` AS pur_purchase_model_number,
+     pur_purchase.`model_year` AS pur_purchase_model_year,
+     pur_purchase.`unit_price` AS pur_purchase_unit_price,
+     pur_purchase.`quantity` AS pur_purchase_quantity,
+     pur_purchase.`total` AS pur_purchase_total,
+     pur_purchase.`supplier_name` AS pur_purchase_supplier_name,
+     pur_purchase.`invoice_number` AS pur_purchase_invoice_number,
+     pur_purchase.`purchased_date` AS pur_purchase_purchased_date
+FROM
+     `pur_purchase` pur_purchase]]>
+	</queryString>
+	<field name="pur_purchase_product_id" class="java.lang.Integer"/>
+	<field name="pur_purchase_product_name" class="java.lang.String"/>
+	<field name="pur_purchase_model_number" class="java.lang.String"/>
+	<field name="pur_purchase_model_year" class="java.lang.String"/>
+	<field name="pur_purchase_unit_price" class="java.lang.Double"/>
+	<field name="pur_purchase_quantity" class="java.lang.Integer"/>
+	<field name="pur_purchase_total" class="java.lang.Double"/>
+	<field name="pur_purchase_supplier_name" class="java.lang.String"/>
+	<field name="pur_purchase_invoice_number" class="java.lang.String"/>
+	<field name="pur_purchase_purchased_date" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="79" backcolor="#003333" uuid="302a6640-0c7e-4b3b-88ab-93cade20e29c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="10" y="10" width="780" height="59" backcolor="#003333" uuid="cbf6ef74-05a2-46a2-9991-5ea96efbb219"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="288" y="20" width="231" height="36" forecolor="#FFFFFF" uuid="71af67d9-41eb-416b-adf4-f1620f0a178a"/>
+				<textElement>
+					<font fontName="Segoe UI Light" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PURCHASE DETAILS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="40" backcolor="#003333" uuid="029351e0-e474-47f8-a7f6-22ee73b37099"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="10" width="58" height="20" forecolor="#FFFFFF" uuid="40a1aace-d88c-4ff6-8413-7e810fcaabc0"/>
+				<text><![CDATA[Product ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="68" y="10" width="89" height="20" forecolor="#FFFFFF" uuid="2fed912f-20e1-4c18-a69e-5ff5119030f9"/>
+				<text><![CDATA[Product Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="157" y="10" width="88" height="20" forecolor="#FFFFFF" uuid="a73faae9-39a6-4ed5-9861-3c73590212cd"/>
+				<text><![CDATA[Model]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="245" y="10" width="78" height="20" forecolor="#FFFFFF" uuid="05e7e5f0-2714-4900-9532-728fc0f564f2"/>
+				<text><![CDATA[Model Year]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="10" width="88" height="20" forecolor="#FFFFFF" uuid="2f71c4e5-2330-4271-83dd-b89817bd226c"/>
+				<text><![CDATA[Unit Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="438" y="10" width="81" height="20" forecolor="#FFFFFF" uuid="6a3d49c3-d5c4-482c-8128-3f5f9c8f5e7d"/>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="519" y="10" width="100" height="20" forecolor="#FFFFFF" uuid="a6da89c7-f1a6-410f-aa8d-72e622fea679"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="619" y="10" width="85" height="20" forecolor="#FFFFFF" uuid="189d3092-4119-4488-9403-38ba7cb03b7c"/>
+				<text><![CDATA[Supplier Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="704" y="10" width="86" height="20" forecolor="#FFFFFF" uuid="0dccab5a-b4eb-4d40-8188-17acd5b88e93"/>
+				<text><![CDATA[Purchased Date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="22" backcolor="#003333" uuid="2126379b-b674-4cbb-8493-83243bd744ab"/>
+			</rectangle>
+			<textField>
+				<reportElement x="10" y="0" width="58" height="20" forecolor="#FFFFFF" uuid="57d09364-40b0-41b1-bdb6-10965065d255"/>
+				<textFieldExpression><![CDATA[$F{pur_purchase_product_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="68" y="0" width="89" height="20" forecolor="#FFFFFF" uuid="960b0620-cd3b-42c3-8f64-61029ef11ea5"/>
+				<textFieldExpression><![CDATA[$F{pur_purchase_product_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="0" width="88" height="20" forecolor="#FFFFFF" uuid="4911425e-b3c0-44cc-a3e9-4da9b5db93d4"/>
+				<textFieldExpression><![CDATA[$F{pur_purchase_model_number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="245" y="0" width="78" height="20" forecolor="#FFFFFF" uuid="90709ccc-8463-4e01-a309-6c914baa41b5"/>
+				<textFieldExpression><![CDATA[$F{pur_purchase_model_year}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="88" height="20" forecolor="#FFFFFF" uuid="6db23edd-9a2b-473b-8791-5d368c231e02"/>
+				<textFieldExpression><![CDATA[$F{pur_purchase_unit_price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="438" y="0" width="81" height="20" forecolor="#FFFFFF" uuid="112960d9-2cb5-498e-b9db-b8014561b3be"/>
+				<textFieldExpression><![CDATA[$F{pur_purchase_quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="519" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="e98ae94d-4003-4b94-94ad-6a6843aa5032"/>
+				<textFieldExpression><![CDATA[$F{pur_purchase_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="619" y="0" width="85" height="20" forecolor="#FFFFFF" uuid="079b8498-ec5e-4113-9703-3c0804b05039"/>
+				<textFieldExpression><![CDATA[$F{pur_purchase_supplier_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="704" y="0" width="86" height="20" forecolor="#FFFFFF" uuid="00e18afc-f4c2-481a-968d-16ad00ef762f"/>
+				<textFieldExpression><![CDATA[$F{pur_purchase_purchased_date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="war_ym" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4c17b485-d1eb-4471-a027-cb2f5b2dd720">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="131"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="year" class="java.lang.String"/>
+	<parameter name="month" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     pur_add_warranty.`product_id` AS pur_add_warranty_product_id,
+     pur_add_warranty.`product_name` AS pur_add_warranty_product_name,
+     pur_add_warranty.`w_start_date` AS pur_add_warranty_w_start_date,
+     pur_add_warranty.`w_duration` AS pur_add_warranty_w_duration,
+     pur_add_warranty.`w_end_date` AS pur_add_warranty_w_end_date,
+     pur_add_warranty.`remaining_duration` AS pur_add_warranty_remaining_duration,
+     pur_add_warranty.`w_type` AS pur_add_warranty_w_type,
+     pur_add_warranty.`w_description` AS pur_add_warranty_w_description
+FROM
+     `pur_add_warranty` pur_add_warranty]]>
+	</queryString>
+	<field name="pur_add_warranty_product_id" class="java.lang.Integer"/>
+	<field name="pur_add_warranty_product_name" class="java.lang.String"/>
+	<field name="pur_add_warranty_w_start_date" class="java.lang.String"/>
+	<field name="pur_add_warranty_w_duration" class="java.lang.String"/>
+	<field name="pur_add_warranty_w_end_date" class="java.lang.String"/>
+	<field name="pur_add_warranty_remaining_duration" class="java.lang.String"/>
+	<field name="pur_add_warranty_w_type" class="java.lang.String"/>
+	<field name="pur_add_warranty_w_description" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="79" backcolor="#006666" uuid="d963c769-bb53-4cb0-8491-668acbcbe0a5"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="12" y="20" width="778" height="52" backcolor="#006666" uuid="4a550eb0-3c0a-430c-a889-0016dbf6f019"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="294" y="31" width="264" height="41" forecolor="#FFFFFF" uuid="fb869c2c-8d1d-487f-904c-2596a3071a3b"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[WARRANTY DETAILS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="41" backcolor="#006666" uuid="a5d0e831-a2e2-4bb6-915a-6c9a2f2963b2"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="12" y="10" width="63" height="20" forecolor="#FFFFFF" uuid="5b2e3a13-5633-4bd6-afa3-ddeb19637903"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="75" y="10" width="78" height="20" forecolor="#FFFFFF" uuid="6dcffebc-bb99-4e06-814b-b491d20184da"/>
+				<text><![CDATA[Product Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="153" y="10" width="87" height="20" forecolor="#FFFFFF" uuid="2b98af93-8e7c-4bb3-8e0e-0e731222132a"/>
+				<text><![CDATA[Warranty Start Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="10" width="76" height="20" forecolor="#FFFFFF" uuid="13c57a61-2373-45be-805f-2ab5392f6538"/>
+				<text><![CDATA[Duration]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="10" width="100" height="20" forecolor="#FFFFFF" uuid="09c833f7-b682-497a-b6d7-c324df530fab"/>
+				<text><![CDATA[Warranty Start Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="448" y="10" width="100" height="20" forecolor="#FFFFFF" uuid="03d4ba86-58e4-4374-b758-caa75bb3fb6e"/>
+				<text><![CDATA[Remaining Duration]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="558" y="10" width="100" height="20" forecolor="#FFFFFF" uuid="1501e0b1-0dde-446b-a68c-8ac0a275c584"/>
+				<text><![CDATA[Warranty End Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="672" y="10" width="106" height="20" forecolor="#FFFFFF" uuid="4ff8b64d-289e-4976-856f-b8a3494eddd5"/>
+				<text><![CDATA[Warranty Type]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="20" backcolor="#006666" uuid="ae8250b3-6df9-4cdc-a062-111b537b7b93"/>
+			</rectangle>
+			<textField>
+				<reportElement x="12" y="0" width="63" height="20" forecolor="#FFFFFF" uuid="49fa9666-f49c-47f7-ae71-3d970857a07f"/>
+				<textFieldExpression><![CDATA[$F{pur_add_warranty_product_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="0" width="78" height="20" forecolor="#FFFFFF" uuid="596ee676-d29a-4826-b437-60b756e8a4d2"/>
+				<textFieldExpression><![CDATA[$F{pur_add_warranty_product_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="0" width="87" height="20" forecolor="#FFFFFF" uuid="28113a40-adb8-4fd4-b91e-1243315a6201"/>
+				<textFieldExpression><![CDATA[$F{pur_add_warranty_w_start_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="0" width="76" height="20" forecolor="#FFFFFF" uuid="ee89337a-3bf7-4d96-b2b6-500ac7dff04a"/>
+				<textFieldExpression><![CDATA[$F{pur_add_warranty_w_duration}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="338" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="b5f05468-881f-46f5-84d7-1230193ca7ae"/>
+				<textFieldExpression><![CDATA[$F{pur_add_warranty_w_duration}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="4633d728-8610-409d-bb4e-5f07f65f386e"/>
+				<textFieldExpression><![CDATA[$F{pur_add_warranty_remaining_duration}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="672" y="0" width="106" height="20" forecolor="#FFFFFF" uuid="2e18bce6-103f-4f3e-b3c6-8bd55993e665"/>
+				<textFieldExpression><![CDATA[$F{pur_add_warranty_w_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="448" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="dee0650d-7cef-42f8-a1e3-9428b9cdd311"/>
+				<textFieldExpression><![CDATA[$F{pur_add_warranty_w_end_date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
